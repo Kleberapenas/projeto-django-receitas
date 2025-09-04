@@ -22,7 +22,7 @@
 
         <div class="flex flex-wrap justify-center gap-6">
         {% if resultados %}
-            {% for receita in resultados %}
+            {% for receita in receitas %}
             <div class="w-full sm:w-[calc(50%-1.Srem)] lg:w´[calc(33.333%-1.5rem)] bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out">
                 {% if receita.image %}
                     <img src="{{ receita.image.url }}" alt="" class="w-full h-48 object-cover rounded-md mb-4">
