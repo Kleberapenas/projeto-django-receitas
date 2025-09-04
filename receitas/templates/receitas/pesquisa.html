@@ -13,18 +13,18 @@
     <main class="container mx-auto p-6 mt-8 bg-white rounded-lg shadow-md">
         <h2 class="text-2xl font-semibold mb-6 text-center">
             {% if query %}
-                resultado para: "{{ query }}"
-            {% else %}
                 Nenhum termo pesquisado
+            {% else %}
+                resultado para: "{{ query }}"
             {% endif %}
         </h2>
 
         <div class="flex flex-wrap justify-center gap-6">
-        {% if resultados %}
-            {% for receita in resultados %}
+        {% if not resultados %}
+            {% for receita in receitas %}
             <div class="w-full sm:w-[calc(50%-1.Srem)] lg:w´[calc(33.333%-1.5rem)] bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out">
                 {% if receita.image %}
-                    <img src="{{ receita.image.url }}" alt="" class="w-full h-48 object-cover rounded-md mb-4">
+                    <img src="{% static 'receitas/static/receitas/img/torta-limao.jpg' %}" alt="Parafuso" class="w-full h-48 object-cover rounded-md mb-4">
                 {% endif %}
                 <h3 class="text-x1 font-bold mb-2 text-gray-800">{{ receita.title }}</h3>
                 <p class="text-gray-600 mb-4">
@@ -39,7 +39,7 @@
             <p class="text-center text-gray-600">Nenhuma receita encontrada</p>
         {% endif %}
         </div>
-    </main>
+  </main>
     {% endblock %}
 </body>
 
