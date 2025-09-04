@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-{% load static %}
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -42,7 +41,7 @@
             {% if receita.image %}
                 <img src="{{ receita.image.url }}" alt="Imagem bolo de {{ receita.title }}" class="w-full h-48 object-cover rounded-md mb-4">
             {% endif %}
-            <p class="text-gray-600 mb-4">{{ receita.description|truncantewords:20 }}</p>
+            <p class="text-gray-600 mb-4">{{ receita.description|truncatewords:20 }}</p>
             <a href="{% url 'receita_detail' receita.id %}" class="text-orange-600 hover:text-orange-800 font-semibold">Ver receita &rarr;</a>
         </div>
         {% empty %}
