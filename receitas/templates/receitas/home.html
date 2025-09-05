@@ -38,8 +38,8 @@
         {% for receita in receitas %}
         <div class="w-full sm:w-[calc(50%-1.5em)] lg:w-[calc(33.333%-1.5rem)] bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out">
             <h3 class="text-x1 font-bold mb-2 text-gray-800">{{ receita.title }}</h3>
-            {% if receita.image %}
-                <img src="{{ receita.image.url }}" alt="Imagem bolo de {{ receita.title }}" class="w-full h-48 object-cover rounded-md mb-4">
+            {% if not receita.image %}
+                <img src="{{ receita.image.url }}" alt="Parafuso" class="w-full h-48 object-cover rounded-md mb-4">
             {% endif %}
             <p class="text-gray-600 mb-4">{{ receita.description|truncatewords:20 }}</p>
             <a href="{% url 'receita_detail' receita.id %}" class="text-orange-600 hover:text-orange-800 font-semibold">Ver receita &rarr;</a>
@@ -49,8 +49,5 @@
         {% endfor %}
     </div>
     {% endblock %}
-    <footer class="mt-12 p-6 text-center text-gray-600">
-        <p>&copy; 2025 Minhas receitas. Todos os direitos reservados a Kleber</p>
-    </footer>
 </body>
 </html>
