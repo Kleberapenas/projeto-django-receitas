@@ -9,18 +9,16 @@ def home(request):
 
     if categoria_slug:
         receitas = Receita.objects.filter(categoria=categoria_slug)
-        categoria_selecionada = categoria_slug
-    
+        categorias_selecionada = categoria_slug
     else:
         receitas = Receita.objects.all()
-        categoria_selecionada = None
+        categorias_selecionada = None
 
-    receitas = Receita.objects.all()
-    return render(request,'receitas/home.html',{
-        'receitas':receitas,
+    return render(request, 'receitas/home.html', {
+        'receitas': receitas,
         'categorias': categorias_choices,
-        'categoria_selecionada': categoria_selecionada
-        })
+        'categoria_selecionada': categorias_selecionada,
+    })
 
 def receita_detail(request, id):
     receita = get_object_or_404(Receita, pk=id)

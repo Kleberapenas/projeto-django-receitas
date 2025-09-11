@@ -33,6 +33,12 @@
             </button>
         </form>
     </section>
+        <nav class="mt-auto relative z-10 flex flex-row justify-center">
+            <a href="{% url 'home' %}" class="text-gray-300 hover:text-white mx-2">Todos</a>
+            <a href="{% url 'home' %}?categoria=comida" class="text-gray-300 hover:text-white mx-2">Comida</a>
+            <a href="{% url 'home' %}?categoria=sobremesa" class="text-gray-300 hover:text-white mx-2">sobremesa</a>
+            <a href="{% url 'home' %}?categoria=drink" class="text-gray-300 hover:text-white mx-2">Drink</a>
+        </nav>
     <h2 class="text-2xt font-semibold mb-4">Bem-vindo à sua página de receitas!</h2>
     <div class="flex flex-wrap justify-center gap-6">
         {% for receita in receitas %}
