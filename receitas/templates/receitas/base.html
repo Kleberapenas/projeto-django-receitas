@@ -16,7 +16,7 @@
 </head>
 <body class="bg-gray-100 text-gray-900">
     <header class="bg-black big-gray-900 text-white p-6 shadow-lg rounded-b-lg ">
-    <div class="container mx-auto flex flex-col sm:flex-col items-center justify-center">
+    <div class="container mx-auto flex flex-col sm:flex-col items-center justify-between">
         <div class="flex items-center mb-4 sm:mb-0">
             <a href="{% url 'home' %}" class="text-gray-300 hover:text-white mx-2 left-0 absolute">Home</a>
             <div class="text-4xl mr-4">
@@ -26,7 +26,10 @@
                 Minhas Receitas
             </h1>
         </div>
-
+        <nav class="ml-auto relative z-10 flex space-x-4">
+            <a href="{% url 'sobre_nos' %}" class="text-gray-300 hover:text-white">Sobre Nós</a>
+            <a href="{% url 'contato' %}" class="text-gray-300 hover:text-white">Contato</a>
+        </nav>
     </div>
     </header>
 
